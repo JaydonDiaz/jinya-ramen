@@ -317,3 +317,396 @@ wireForm('contact-form', 'form-success', ['name', 'email']);
 wireForm('franchise-form', 'franchise-form-success', ['fr-name', 'fr-email', 'fr-phone']);
 wireForm('careers-form', 'careers-form-success', ['cr-name', 'cr-email', 'cr-phone']);
 wireForm('partner-form', 'partner-form-success', ['pt-name', 'pt-email']);
+
+
+const ITEM_AVAILABILITY = {
+  'hokkaido-crepe': { label: "Hokkaido Mille Cr\u00e9pe", type: 'region', text: "This Chef's Special is part of the current U.S. rotation and is available at JINYA locations across the United States." },
+  'birria-ramen': { label: 'Birria Ramen', type: 'region', text: "This item is part of the current U.S. ramen lineup and is available at JINYA locations across the United States." },
+  'potato-mochi': { label: 'Potato Mochi Balls', type: 'region', text: "This Chef's Special is part of the current Canada rotation and is available at JINYA locations across Canada." },
+  'malibu-sunrise': { label: "Malibu Sunrise", type: 'list', locations: [
+      "Alpharetta, GA",
+      "Ameristar Black Hawk, CO",
+      "Arlington, VA",
+      "Athens, GA",
+      "Baton Rouge, LA",
+      "Buckhead (Atlanta), GA",
+      "Buford, GA",
+      "Carrollton, TX",
+      "Central Phoenix, AZ",
+      "Chandler, AZ",
+      "Colorado Springs, CO",
+      "Culebra (San Antonio), TX",
+      "Cypress, TX",
+      "Duluth, GA",
+      "Edmonton, AB",
+      "FM 1960 (Houston), TX",
+      "Fishers, IN",
+      "Foothills (Fort Collins), CO",
+      "Georgetown (Washington), DC",
+      "Hackensack, NJ",
+      "Heights Waterworks (Houston), TX",
+      "Hilton Head Island, SC",
+      "Katy, TX",
+      "Kennesaw, GA",
+      "Lake Grove, NY",
+      "Langley, BC",
+      "Logan Circle (Washington), DC",
+      "Macleod South (Calgary), AB",
+      "Midtown (Houston), TX",
+      "NASA Area (Webster/Houston), TX",
+      "Nashville, TN",
+      "Nichols Hills (Oklahoma City), OK",
+      "North Bethesda, MD",
+      "Omaha, NE",
+      "Overland Park (Kansas City), KS",
+      "Oviedo, FL",
+      "Pearland, TX",
+      "Preston Hollow (Dallas), TX",
+      "Reston, VA",
+      "Royal Oak, MI",
+      "San Antonio, TX",
+      "Sandy Springs, GA",
+      "South Bend, IN",
+      "Spring Branch (Houston), TX",
+      "Sugar Land, TX",
+      "Sugarhouse (Salt Lake City), UT",
+      "The Wharf (Washington), DC",
+      "The Woodlands (Spring), TX",
+      "Thornton Park (Orlando), FL",
+      "Topanga Westfield (Woodland Hills), CA",
+      "Totowa, NJ",
+      "TrailHead (Peoria), AZ",
+      "Tulsa – Downtown, OK",
+      "Union Market, DC",
+      "Union Station (Denver), CO",
+      "Vancouver Downtown, BC",
+      "Victory Park (Dallas), TX"
+  ] },
+  'e-tomo': { label: "E Tomo E Tomo E Tomorrow", type: 'list', locations: [
+      "2nd & PCH (Long Beach), CA",
+      "Ally Charlotte Center, NC",
+      "Alpharetta, GA",
+      "Ameristar Black Hawk, CO",
+      "Arlington, VA",
+      "Athens, GA",
+      "Baton Rouge, LA",
+      "Buford, GA",
+      "Central Phoenix, AZ",
+      "Colorado Springs, CO",
+      "Culebra (San Antonio), TX",
+      "Cypress, TX",
+      "Duluth, GA",
+      "Edmonton, AB",
+      "FM 1960 (Houston), TX",
+      "Fishers, IN",
+      "Foothills (Fort Collins), CO",
+      "Georgetown (Washington), DC",
+      "Hackensack, NJ",
+      "Heights Waterworks (Houston), TX",
+      "Hilton Head Island, SC",
+      "Katy, TX",
+      "Kennesaw, GA",
+      "Lake Grove, NY",
+      "Langley, BC",
+      "Logan Circle (Washington), DC",
+      "Macleod South (Calgary), AB",
+      "Midtown (Houston), TX",
+      "NASA Area (Webster/Houston), TX",
+      "Nichols Hills (Oklahoma City), OK",
+      "North Bethesda, MD",
+      "Overland Park (Kansas City), KS",
+      "Oviedo, FL",
+      "Pearland, TX",
+      "Reston, VA",
+      "Royal Oak, MI",
+      "San Antonio, TX",
+      "Sandy Springs, GA",
+      "South Bend, IN",
+      "SouthPark (Charlotte), NC",
+      "Spring Branch (Houston), TX",
+      "Sugar Land, TX",
+      "Sugarhouse (Salt Lake City), UT",
+      "The Wharf (Washington), DC",
+      "The Woodlands (Spring), TX",
+      "Thornton Park (Orlando), FL",
+      "Topanga Westfield (Woodland Hills), CA",
+      "Totowa, NJ",
+      "TrailHead (Peoria), AZ",
+      "Tulsa – Downtown, OK",
+      "Union Market, DC",
+      "Union Station (Denver), CO",
+      "Vancouver Downtown, BC",
+      "Vancouver West, BC"
+  ] },
+  'flying-violette': { label: "Flying Violette", type: 'list', locations: [
+      "Baton Rouge, LA",
+      "Central Phoenix, AZ",
+      "Colorado Springs, CO",
+      "Edmonton, AB",
+      "Fishers, IN",
+      "Foothills (Fort Collins), CO",
+      "Hackensack, NJ",
+      "Hilton Head Island, SC",
+      "Lake Grove, NY",
+      "Langley, BC",
+      "Macleod South (Calgary), AB",
+      "Omaha, NE",
+      "Totowa, NJ",
+      "TrailHead (Peoria), AZ",
+      "Union Market, DC",
+      "Union Station (Denver), CO",
+      "Vancouver Downtown, BC"
+  ] },
+  'smokey-wokashi': { label: "Smokey Wokashi OF", type: 'list', locations: [
+      "2nd & PCH (Long Beach), CA",
+      "Ally Charlotte Center, NC",
+      "Alpharetta, GA",
+      "Ameristar Black Hawk, CO",
+      "Arlington, VA",
+      "Athens, GA",
+      "Baton Rouge, LA",
+      "Buckhead (Atlanta), GA",
+      "Buford, GA",
+      "Carrollton, TX",
+      "Central Phoenix, AZ",
+      "Chandler, AZ",
+      "Colorado Springs, CO",
+      "Culebra (San Antonio), TX",
+      "Cypress, TX",
+      "Duluth, GA",
+      "Edmonton, AB",
+      "FM 1960 (Houston), TX",
+      "Fishers, IN",
+      "Foothills (Fort Collins), CO",
+      "Georgetown (Washington), DC",
+      "Hackensack, NJ",
+      "Heights Waterworks (Houston), TX",
+      "Hilton Head Island, SC",
+      "Katy, TX",
+      "Kennesaw, GA",
+      "Lake Grove, NY",
+      "Langley, BC",
+      "Logan Circle (Washington), DC",
+      "Macleod South (Calgary), AB",
+      "Midtown (Houston), TX",
+      "NASA Area (Webster/Houston), TX",
+      "Nashville, TN",
+      "Nichols Hills (Oklahoma City), OK",
+      "North Bethesda, MD",
+      "Omaha, NE",
+      "Overland Park (Kansas City), KS",
+      "Oviedo, FL",
+      "Pearland, TX",
+      "Preston Hollow (Dallas), TX",
+      "Reston, VA",
+      "San Antonio, TX",
+      "Sandy Springs, GA",
+      "South Bend, IN",
+      "SouthPark (Charlotte), NC",
+      "Spring Branch (Houston), TX",
+      "Sugar Land, TX",
+      "Sugarhouse (Salt Lake City), UT",
+      "The Wharf (Washington), DC",
+      "The Woodlands (Spring), TX",
+      "Thornton Park (Orlando), FL",
+      "Totowa, NJ",
+      "TrailHead (Peoria), AZ",
+      "Tulsa – Downtown, OK",
+      "Union Market, DC",
+      "Union Station (Denver), CO",
+      "Vancouver Downtown, BC",
+      "Vancouver West, BC",
+      "Victory Park (Dallas), TX"
+  ] },
+  'lycheetini': { label: "Lycheetini", type: 'list', locations: [
+      "2nd & PCH (Long Beach), CA",
+      "Alpharetta, GA",
+      "Ameristar Black Hawk, CO",
+      "Arlington, VA",
+      "Austin, TX",
+      "Buckhead (Atlanta), GA",
+      "Burbank, CA",
+      "Calgary, AB",
+      "Carrollton, TX",
+      "Central Phoenix, AZ",
+      "Chandler, AZ",
+      "Colorado Springs, CO",
+      "Culebra (San Antonio), TX",
+      "Culver City, CA",
+      "Cypress, TX",
+      "Downtown LA, CA",
+      "Duluth, GA",
+      "Edmonton, AB",
+      "FM 1960 (Houston), TX",
+      "Fairfax, VA",
+      "Fishers, IN",
+      "Foothills (Fort Collins), CO",
+      "Georgetown (Washington), DC",
+      "Hackensack, NJ",
+      "Heights Waterworks (Houston), TX",
+      "Hilton Head Island, SC",
+      "Katy, TX",
+      "Kennesaw, GA",
+      "Lake Grove, NY",
+      "Langley, BC",
+      "Logan Circle (Washington), DC",
+      "Macleod South (Calgary), AB",
+      "Midtown (Houston), TX",
+      "NASA Area (Webster/Houston), TX",
+      "Nashville, TN",
+      "Nichols Hills (Oklahoma City), OK",
+      "North Bethesda, MD",
+      "Omaha, NE",
+      "Overland Park (Kansas City), KS",
+      "Pearland, TX",
+      "Preston Hollow (Dallas), TX",
+      "Rainbow (Las Vegas), NV",
+      "Reston, VA",
+      "Royal Oak, MI",
+      "San Antonio, TX",
+      "Sandy Springs, GA",
+      "Santa Monica, CA",
+      "South Bend, IN",
+      "Spring Branch (Houston), TX",
+      "Studio City, CA",
+      "Sugar Land, TX",
+      "Sugarhouse (Salt Lake City), UT",
+      "The Wharf (Washington), DC",
+      "The Woodlands (Spring), TX",
+      "Topanga Westfield (Woodland Hills), CA",
+      "Totowa, NJ",
+      "TrailHead (Peoria), AZ",
+      "Tulsa – Downtown, OK",
+      "Union Market, DC",
+      "Union Station (Denver), CO",
+      "Vancouver Downtown, BC",
+      "Victory Park (Dallas), TX"
+  ] },
+  'yuzu-margarita': { label: "Yuzu Margarita", type: 'list', locations: [
+      "2nd & PCH (Long Beach), CA",
+      "Ally Charlotte Center, NC",
+      "Alpharetta, GA",
+      "Ameristar Black Hawk, CO",
+      "Arlington, VA",
+      "Athens, GA",
+      "Baton Rouge, LA",
+      "Buckhead (Atlanta), GA",
+      "Buford, GA",
+      "Carrollton, TX",
+      "Central Phoenix, AZ",
+      "Chandler, AZ",
+      "Colorado Springs, CO",
+      "Culebra (San Antonio), TX",
+      "Cypress, TX",
+      "Duluth, GA",
+      "Edmonton, AB",
+      "FM 1960 (Houston), TX",
+      "Fishers, IN",
+      "Foothills (Fort Collins), CO",
+      "Georgetown (Washington), DC",
+      "Hackensack, NJ",
+      "Heights Waterworks (Houston), TX",
+      "Hilton Head Island, SC",
+      "Katy, TX",
+      "Kennesaw, GA",
+      "Lake Grove, NY",
+      "Langley, BC",
+      "Logan Circle (Washington), DC",
+      "Macleod South (Calgary), AB",
+      "Midtown (Houston), TX",
+      "NASA Area (Webster/Houston), TX",
+      "Nashville, TN",
+      "Nichols Hills (Oklahoma City), OK",
+      "North Bethesda, MD",
+      "Omaha, NE",
+      "Overland Park (Kansas City), KS",
+      "Oviedo, FL",
+      "Pearland, TX",
+      "Preston Hollow (Dallas), TX",
+      "Reston, VA",
+      "Royal Oak, MI",
+      "San Antonio, TX",
+      "Sandy Springs, GA",
+      "South Bend, IN",
+      "SouthPark (Charlotte), NC",
+      "Spring Branch (Houston), TX",
+      "Sugar Land, TX",
+      "Sugarhouse (Salt Lake City), UT",
+      "The Wharf (Washington), DC",
+      "The Woodlands (Spring), TX",
+      "Thornton Park (Orlando), FL",
+      "Topanga Westfield (Woodland Hills), CA",
+      "Totowa, NJ",
+      "TrailHead (Peoria), AZ",
+      "Tulsa – Downtown, OK",
+      "Union Market, DC",
+      "Union Station (Denver), CO",
+      "Vancouver Downtown, BC",
+      "Vancouver West, BC",
+      "Victory Park (Dallas), TX"
+  ] },
+};
+
+(function () {
+  const overlay = document.getElementById('loc-modal-overlay');
+  if (!overlay) return;
+  const titleEl = document.getElementById('loc-modal-title');
+  const bodyEl = document.getElementById('loc-modal-body');
+  const closeBtn = document.getElementById('loc-modal-close');
+  let lastTrigger = null;
+
+  function onKeydown(e) {
+    if (e.key === 'Escape') closeLocModal();
+  }
+
+  function openLocModal(item, trigger) {
+    lastTrigger = trigger;
+    titleEl.textContent = item.label;
+    bodyEl.innerHTML = '';
+
+    if (item.type === 'region') {
+      const p = document.createElement('p');
+      p.className = 'loc-modal-region';
+      p.textContent = item.text;
+      bodyEl.appendChild(p);
+    } else {
+      const sub = document.createElement('p');
+      sub.className = 'loc-modal-sub';
+      sub.textContent = `Confirmed on the menu at ${item.locations.length} JINYA locations:`;
+      bodyEl.appendChild(sub);
+      const list = document.createElement('div');
+      list.className = 'loc-modal-list';
+      item.locations.forEach(loc => {
+        const d = document.createElement('div');
+        d.className = 'loc-modal-list-item';
+        d.textContent = loc;
+        list.appendChild(d);
+      });
+      bodyEl.appendChild(list);
+    }
+
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.addEventListener('keydown', onKeydown);
+    closeBtn.focus();
+  }
+
+  function closeLocModal() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.removeEventListener('keydown', onKeydown);
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  document.querySelectorAll('.menu-card-badge[data-item]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = ITEM_AVAILABILITY[btn.dataset.item];
+      if (item) openLocModal(item, btn);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLocModal);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeLocModal();
+  });
+})();
