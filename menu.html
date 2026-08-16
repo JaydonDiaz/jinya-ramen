@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — JINYA Ramen Bar</title>
+  <meta name="description" content="Explore the full JINYA Ramen Bar menu — Chef's Special, ramen, small plates, sushi, rice bowls, dessert, and Japanese-inspired cocktails.">
+  <link rel="preconnect" href="https://use.typekit.net">
+  <link rel="stylesheet" href="https://use.typekit.net/aog7svi.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .menu-hero {
+      padding: calc(var(--nav-h) + 56px) 0 48px;
+      background: var(--bg-dark);
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .menu-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(204,0,0,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .menu-hero-inner { position: relative; max-width: 620px; margin: 0 auto; }
+    .menu-hero h1 { font-size: clamp(34px, 6vw, 60px); font-weight: 700; text-transform: uppercase; margin: 8px 0 14px; }
+    .menu-hero p { font-size: 15px; color: var(--muted); max-width: 520px; margin: 0 auto; }
+    .menu-tabs-sticky {
+      position: sticky; top: var(--nav-h); z-index: 40;
+      background: rgba(var(--bg-rgb, 10,10,10),0.96); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+    }
+    .menu-tabs { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav" class="nav scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg" alt="JINYA Ramen Bar" class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="menu.html" class="nav-link active">Menu</a></li>
+        <li><a href="locations.html" class="nav-link">Locations</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="franchise.html" class="nav-link">Franchise</a></li>
+        <li><a href="rewards.html" class="nav-link">Rewards</a></li>
+        <li><a href="careers.html" class="nav-link">Careers</a></li>
+        <li><a href="press.html" class="nav-link">Press</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm nav-cta">Order Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <ul>
+        <li><a href="menu.html" class="mobile-link">Menu</a></li>
+        <li><a href="locations.html" class="mobile-link">Locations</a></li>
+        <li><a href="about.html" class="mobile-link">About Us</a></li>
+        <li><a href="franchise.html" class="mobile-link">Franchise</a></li>
+        <li><a href="rewards.html" class="mobile-link">Rewards</a></li>
+        <li><a href="careers.html" class="mobile-link">Careers</a></li>
+        <li><a href="press.html" class="mobile-link">Press</a></li>
+        <li><a href="contact.html" class="mobile-link">Contact</a></li>
+      </ul>
+      <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-full mobile-cta">Order Now</a>
+    </div>
+  </div>
+
+  <!-- ===== MENU HERO ===== -->
+  <section class="menu-hero">
+    <div class="container menu-hero-inner">
+      <span class="eyebrow reveal-up">Our Menu</span>
+      <h1 class="reveal-up">Ramen Is Just <span class="text-red">the Beginning</span></h1>
+      <p class="reveal-up">Deeply rich broths, handcrafted noodles, authentic flavorful toppings, shareable small plates, and a full bar of Japanese-inspired cocktails. Availability varies by location.</p>
+    </div>
+  </section>
+
+  <!-- ===== TABS ===== -->
+  <div class="menu-tabs-sticky">
+    <div class="container">
+      <div class="menu-tabs">
+        <button class="menu-tab active" data-cat="chef">Chef's Special</button>
+        <button class="menu-tab" data-cat="ramen">Ramen</button>
+        <button class="menu-tab" data-cat="salads">Salads</button>
+        <button class="menu-tab" data-cat="small-plates">Small Plates</button>
+        <button class="menu-tab" data-cat="mini-tacos">Mini Tacos</button>
+        <button class="menu-tab" data-cat="sushi">Sushi</button>
+        <button class="menu-tab" data-cat="rice-bowls">Rice Bowls &amp; Curry</button>
+        <button class="menu-tab" data-cat="dessert">Dessert</button>
+        <button class="menu-tab" data-cat="kids">Kids' Meal</button>
+        <button class="menu-tab" data-cat="cocktails">Cocktails</button>
+        <button class="menu-tab" data-cat="mocktails">Mocktails</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MENU GRID ===== -->
+  <section class="section-padding" style="padding-top:56px;">
+    <div class="container">
+
+      <!-- Chef's Special -->
+      <div class="menu-category active" data-cat="chef">
+        <div class="menu-card">
+          <div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2026/05/jrb_creamy-tonkotsu_26_01_8_rgb-600x400.jpg" alt="Creamy Tonkotsu Ramen" loading="lazy"></div>
+          <div class="menu-card-body"><span class="menu-card-tag">Chef's Special</span><div class="menu-card-name">Creamy Tonkotsu Ramen</div><p class="menu-card-desc">Rich, creamy tonkotsu broth simmered for 20 hours, topped with tender chashu and handcrafted noodles.</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2026/05/jrb_hokkaido-mille-crape_26_01_1_rgb-600x400.jpg" alt="Hokkaido Mille Cr&ecirc;pe" loading="lazy"></div>
+          <div class="menu-card-body"><span class="menu-card-tag">Chef's Special &middot; US</span><div class="menu-card-name">Hokkaido Mille Cr&ecirc;pe</div><p class="menu-card-desc">Delicate layered crepe cake inspired by Hokkaido's famous dairy, light and irresistibly soft.</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2026/05/jrb_potato-mochi-balls_26_01_5_rgb-600x400.jpg" alt="Potato Mochi Balls" loading="lazy"></div>
+          <div class="menu-card-body"><span class="menu-card-tag">Chef's Special &middot; Canada</span><div class="menu-card-name">Potato Mochi Balls</div><p class="menu-card-desc">Crispy on the outside, chewy on the inside — a comforting Japanese-style potato mochi bite.</p></div>
+        </div>
+      </div>
+
+      <!-- Ramen -->
+      <div class="menu-category" data-cat="ramen">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/jrb_tan-tan-men_25_01_4_rgb-600x400.jpg" alt="Tan Tan Men" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen</span><div class="menu-card-name">Tan Tan Men</div><p class="menu-card-desc">Spicy sesame ramen with ground pork, bok choy, and a rich, nutty broth.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/02/Birria-Ramen-resized-1-600x600.jpg" alt="Birria Ramen" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen &middot; US</span><div class="menu-card-name">Birria Ramen</div><p class="menu-card-desc">A bold Mexican-Japanese fusion — slow-braised birria meets our signature ramen broth.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2023/06/jrb_vegan-red-fire-opal_23_01_3_rgb_web_800x800-600x600.jpg" alt="V Red Fire Opal" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen &middot; Vegan</span><div class="menu-card-name">V Red Fire Opal</div><p class="menu-card-desc">A fiery plant-based ramen with bold spice and a deeply savory vegan broth.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/09/jrb_spicy-creamy-vegan_21_01_36_rgb_600x600.jpg" alt="Spicy Creamy V Ramen" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen &middot; Vegan</span><div class="menu-card-name">Spicy Creamy V Ramen</div><p class="menu-card-desc">A creamy, spicy plant-based broth loaded with fresh vegetables and handmade noodles.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/flyingveganharvest-1.png" alt="Flying V Harvest" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen &middot; Vegan</span><div class="menu-card-name">Flying V Harvest</div><p class="menu-card-desc">A vibrant harvest-vegetable ramen bowl, light yet satisfying, entirely plant-based.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/jrb_jinya-chicken_21_01_31_rgb_600x600.jpg" alt="JINYA Chicken Ramen" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen</span><div class="menu-card-name">JINYA Chicken Ramen</div><p class="menu-card-desc">Our signature chicken broth, slow-simmered for a clean, rich, comforting bowl.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/jrb_spicy-chicken_21_01_34_rgb_600x600.jpg" alt="Spicy Chicken Ramen" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen</span><div class="menu-card-name">Spicy Chicken Ramen</div><p class="menu-card-desc">JINYA's chicken broth turned up with a bold, fiery kick.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/jrb_wonton-chicken_21_01_41_rgb_600x600.jpg" alt="Wonton Chicken Ramen" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen</span><div class="menu-card-name">Wonton Chicken Ramen</div><p class="menu-card-desc">Delicate house-made chicken wontons swimming in our savory chicken broth.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/jrb_ramen_tonkotsu-black_22_01_5_rgb-800x800-1-600x600.jpg" alt="JINYA Tonkotsu Black" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen</span><div class="menu-card-name">JINYA Tonkotsu Black</div><p class="menu-card-desc">Rich tonkotsu broth finished with a bold garlic-infused black oil.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/jrb_ramen_premium-tonkotsu-red_22_01_6_rgb-800x800-1-600x600.jpg" alt="Premium Tonkotsu Red" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen</span><div class="menu-card-name">Premium Tonkotsu Red</div><p class="menu-card-desc">A spicier take on our classic tonkotsu, finished with a fragrant chili oil.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2021/09/jrb_ramen_tonkotsu-original-2010_22_01_5_rgb-800x800-1-600x600.jpg" alt="JINYA Tonkotsu Original 2010" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen &middot; Original</span><div class="menu-card-name">JINYA Tonkotsu Original 2010</div><p class="menu-card-desc">The bowl that started it all — our founding tonkotsu recipe since 2010.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/jrb_chicken-yuzu-shio-delight_25_01_3_rgb-600x400.jpg" alt="Chicken Yuzu Shio Delight" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen</span><div class="menu-card-name">Chicken Yuzu Shio Delight</div><p class="menu-card-desc">A bright, citrus-forward shio broth balanced with fresh yuzu and tender chicken.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/shrimpwontonramen.png" alt="Shrimp Wonton Ramen" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen</span><div class="menu-card-name">Shrimp Wonton Ramen</div><p class="menu-card-desc">Plump shrimp wontons in a delicate, savory broth.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/jrb_mountain-buta-garlic_25_01_3_rgb-600x400.jpg" alt="Mountain Buta Garlic" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Ramen</span><div class="menu-card-name">Mountain Buta Garlic</div><p class="menu-card-desc">A hearty pork ramen loaded with roasted garlic for a bold, punchy finish.</p></div></div>
+      </div>
+
+      <!-- Salads -->
+      <div class="menu-category" data-cat="salads">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/jrb_crunchy-cucumber-salad_25_01_4_rgb-600x400.jpg" alt="Crunchy Cucumber Salad" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Salad</span><div class="menu-card-name">Crunchy Cucumber Salad</div><p class="menu-card-desc">Crisp, cool cucumbers tossed in a light Japanese-style dressing.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/02/chicken-salad-resize-1-600x600.png" alt="Chicken Salad" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Salad</span><div class="menu-card-name">Chicken Salad</div><p class="menu-card-desc">Fresh greens topped with tender chicken and a house dressing.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/housesalad2-600x600.jpg" alt="House Salad" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Salad</span><div class="menu-card-name">House Salad</div><p class="menu-card-desc">Crisp mixed greens with our signature house dressing.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/seaweedsalad-1-600x600.png" alt="Seaweed Salad" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Salad</span><div class="menu-card-name">Seaweed Salad</div><p class="menu-card-desc">A refreshing, savory-sweet classic seaweed salad.</p></div></div>
+      </div>
+
+      <!-- Small Plates -->
+      <div class="menu-category" data-cat="small-plates">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/jrb_french-fries_25_01_5_rgb-600x400.jpg" alt="French Fries" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">French Fries</div><p class="menu-card-desc">Golden, crispy fries — a simple, shareable favorite.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2024/10/jrb_miso-glazed-eggplant_24_01_2_rgb-600x400.jpg" alt="Miso Glazed Eggplant" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Miso Glazed Eggplant</div><p class="menu-card-desc">Tender eggplant glazed in a sweet-savory miso sauce.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2023/12/jrb_hokkaido-scallop_23_02_2_rgb_800x800-600x600.jpg" alt="Hokkaido Scallop" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Hokkaido Scallop</div><p class="menu-card-desc">Delicate scallop finished with organic dry miso.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2023/12/jrb_salmon-jalapeno-sashimi_23_02_2_rgb_800x800-600x600.jpg" alt="Salmon Jalape&ntilde;o Sashimi" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Salmon Jalape&ntilde;o Sashimi</div><p class="menu-card-desc">Fresh salmon sashimi with a bright jalape&ntilde;o kick.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2023/12/jrb_corn-tempura_23_02_2_rgb_800x800-600x600.jpg" alt="Corn Tempura" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Corn Tempura</div><p class="menu-card-desc">Sweet corn, lightly battered and fried to a delicate crisp.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2023/09/nikuman-2.jpg" alt="Nikuman" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Nikuman</div><p class="menu-card-desc">Soft, steamed bun filled with a savory pork filling.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2021/12/imp-v2800x800-600x600.jpg" alt="Impossible Gyoza" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate &middot; Plant-Based</span><div class="menu-card-name">Impossible&trade; Gyoza</div><p class="menu-card-desc">Pan-seared dumplings filled with plant-based Impossible&trade; filling.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/brusselssprouts-600x600.png" alt="Brussels Sprouts Tempura" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Brussels Sprouts Tempura</div><p class="menu-card-desc">Crispy tempura Brussels sprouts, light and addictive.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/edamame-1-600x600-1.jpg" alt="Edamame" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Edamame</div><p class="menu-card-desc">Steamed and lightly salted — a classic starter.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2023/02/jrb_garlic-shrimp-spring-roll_22_01_2_rgb_800x800_web-menu-600x600.jpg" alt="Garlic Shrimp Spring Roll" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Garlic Shrimp Spring Roll</div><p class="menu-card-desc">Crispy spring rolls packed with garlicky shrimp.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/gyoza-600x600.png" alt="Pork Gyoza" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate &middot; 6pc</span><div class="menu-card-name">Pork Gyoza</div><p class="menu-card-desc">Classic pan-seared pork dumplings, six per order.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/jinyabun-600x600.png" alt="JINYA Bun" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">JINYA Bun</div><p class="menu-card-desc">A soft steamed bun filled with our signature chashu pork.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/12/impossiblebun.png" alt="Impossible Bun" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate &middot; Plant-Based</span><div class="menu-card-name">Impossible&trade; Bun</div><p class="menu-card-desc">Steamed bun filled with a savory plant-based Impossible&trade; filling.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/crispychicken-1-600x600-1.jpg" alt="Crispy Chicken" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Crispy Chicken</div><p class="menu-card-desc">Crunchy, juicy fried chicken bites.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/jrb_takoyaki_21_01_47_rgb_600x600.jpg" alt="Takoyaki" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Takoyaki</div><p class="menu-card-desc">Classic octopus balls, drizzled with savory-sweet sauce and bonito flakes.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/spicycreamyshrimptempura-1-600x600-1.jpg" alt="Spicy Creamy Shrimp Tempura" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Spicy Creamy Shrimp Tempura</div><p class="menu-card-desc">Crispy shrimp tempura tossed in a spicy creamy sauce.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/12/spicytunacrispyrice2-600x600.jpg" alt="Crispy Rice with Spicy Tuna" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Crispy Rice with Spicy Tuna</div><p class="menu-card-desc">Crispy rice cakes topped with spicy tuna.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2021/07/sauteedbroccolini-600x600.png" alt="Saut&eacute;ed Broccolini" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Small Plate</span><div class="menu-card-name">Saut&eacute;ed Broccolini</div><p class="menu-card-desc">Fresh broccolini, lightly saut&eacute;ed and seasoned.</p></div></div>
+      </div>
+
+      <!-- Mini Tacos -->
+      <div class="menu-category" data-cat="mini-tacos">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/salmonpoketaco-600x600.png" alt="Salmon Poke Mini Taco" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Mini Tacos &middot; 2pc</span><div class="menu-card-name">Salmon Poke</div><p class="menu-card-desc">Crispy taco shells piled with fresh salmon poke.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/spicytunataco-600x600.png" alt="Spicy Tuna Mini Taco" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Mini Tacos &middot; 2pc</span><div class="menu-card-name">Spicy Tuna</div><p class="menu-card-desc">Crispy taco shells topped with spicy tuna.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/impossibletaco.png" alt="Impossible Mini Taco" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Mini Tacos &middot; 2pc &middot; Plant-Based</span><div class="menu-card-name">Impossible&trade;</div><p class="menu-card-desc">Crispy taco shells filled with seasoned Impossible&trade; filling.</p></div></div>
+      </div>
+
+      <!-- Sushi -->
+      <div class="menu-category" data-cat="sushi">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/02/1000x1100-jrb_salmon-oshi-sushi_24_01_4_rgb-1-545x600.jpg" alt="Aburi Oshi-Sushi Salmon 3 piece" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Sushi &middot; 3pc</span><div class="menu-card-name">Aburi Oshi-Sushi Salmon</div><p class="menu-card-desc">Torch-seared pressed sushi, three pieces.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/11/jrb_salmon-aburi-oshi-sushi_full_25_01_2_rgb-600x400.jpg" alt="Aburi Oshi-Sushi Salmon 6 piece" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Sushi &middot; 6pc</span><div class="menu-card-name">Aburi Oshi-Sushi Salmon</div><p class="menu-card-desc">Torch-seared pressed sushi, six pieces.</p></div></div>
+      </div>
+
+      <!-- Rice Bowls & Curry -->
+      <div class="menu-category" data-cat="rice-bowls">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/11/jrb_garlic-rice_25_02_2_rgb-scaled-600x400.webp" alt="Garlic Rice" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Rice Bowl</span><div class="menu-card-name">Garlic Rice</div><p class="menu-card-desc">Fragrant rice tossed in roasted garlic.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/porkchashubowl-600x600-1.jpg" alt="Pork Chashu Bowl" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Rice Bowl</span><div class="menu-card-name">Pork Chashu Bowl</div><p class="menu-card-desc">Tender braised pork chashu over steamed rice.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/chickenbowl-600x600-1.jpg" alt="Chicken Chashu Bowl" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Rice Bowl</span><div class="menu-card-name">Chicken Chashu Bowl</div><p class="menu-card-desc">Tender braised chicken chashu over steamed rice.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/impossiblebowl.png" alt="Impossible Rice Bowl" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Rice Bowl &middot; Plant-Based</span><div class="menu-card-name">Impossible&trade; Rice Bowl</div><p class="menu-card-desc">Seasoned plant-based Impossible&trade; over steamed rice.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/jrb_bwl_tky-cry_23_01_3_rgb-600x400.jpg" alt="Tokyo Curry Rice" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Rice Bowl</span><div class="menu-card-name">Tokyo Curry Rice</div><p class="menu-card-desc">Japanese-style curry served over steamed rice.</p></div></div>
+      </div>
+
+      <!-- Dessert -->
+      <div class="menu-category" data-cat="dessert">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/jrb_matcha-tiramisu_25_01_2_rgb1-600x400.jpg" alt="Matcha Tiramisu" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Dessert</span><div class="menu-card-name">Matcha Tiramisu</div><p class="menu-card-desc">A Japanese twist on the Italian classic, layered with matcha.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/greenteamochi-600x600-1.jpg" alt="Mochi Ice Cream" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Dessert</span><div class="menu-card-name">Mochi Ice Cream</div><p class="menu-card-desc">Chewy mochi wrapped around cold, creamy ice cream.</p></div></div>
+      </div>
+
+      <!-- Kids' Meal -->
+      <div class="menu-category" data-cat="kids">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/02/Kids-Meal-No-Ice-Cream-600x400.jpg" alt="Kid's Meal" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Kids' Meal</span><div class="menu-card-name">Kid's Meal</div><p class="menu-card-desc">A kid-friendly portion, perfect for little ramen fans.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2020/12/vegankidsmeal2-600x600.jpg" alt="Vegetarian Kid's Meal" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Kids' Meal &middot; Vegetarian</span><div class="menu-card-name">Vegetarian Kid's Meal</div><p class="menu-card-desc">A veggie-friendly version of our kid's meal.</p></div></div>
+      </div>
+
+      <!-- Cocktails -->
+      <div class="menu-category" data-cat="cocktails">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/malibu_sunrise-600x600.jpg" alt="Malibu Sunrise" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Cocktail &middot; Select Locations</span><div class="menu-card-name">Malibu Sunrise</div><p class="menu-card-desc">A bright, tropical sunrise-inspired cocktail.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/e_tomo_e_tomo_e_tomorrow-600x600.jpg" alt="E Tomo E Tomo E Tomorrow" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Cocktail &middot; Select Locations</span><div class="menu-card-name">E Tomo E Tomo E Tomorrow</div><p class="menu-card-desc">A signature JINYA original, crafted for the adventurous.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/flying_violette-600x600.jpg" alt="Flying Violette" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Cocktail &middot; Select Locations</span><div class="menu-card-name">Flying Violette</div><p class="menu-card-desc">A floral, elegant sip with a vibrant violette hue.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/smokey_wokashi_of-600x600.jpg" alt="Smokey Wokashi OF" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Cocktail &middot; Select Locations</span><div class="menu-card-name">Smokey Wokashi OF</div><p class="menu-card-desc">A smoky, whiskey-forward Japanese-inspired old fashioned.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/lycheetini-600x600.jpg" alt="Lycheetini" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Cocktail &middot; Select Locations</span><div class="menu-card-name">Lycheetini</div><p class="menu-card-desc">A fragrant lychee martini, crisp and refreshing.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/05/yuzu_margarita-600x600.jpg" alt="Yuzu Margarita" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Cocktail &middot; Select Locations</span><div class="menu-card-name">Yuzu Margarita</div><p class="menu-card-desc">A citrus-forward margarita featuring bright Japanese yuzu.</p></div></div>
+      </div>
+
+      <!-- Mocktails -->
+      <div class="menu-category" data-cat="mocktails">
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2024/12/JINYA_Jgirl-1-600x600.png" alt="J. Girl" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Mocktail</span><div class="menu-card-name">J. Girl</div><p class="menu-card-desc">A refreshing, fruit-forward non-alcoholic signature.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2023/06/watermelon-delight-600x600.png" alt="Watermelon Delight" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Mocktail</span><div class="menu-card-name">Watermelon Delight</div><p class="menu-card-desc">Cool, sweet watermelon in a refreshing non-alcoholic sip.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2024/12/JINYA_Matcha-Lychee-Lemonade1-1-600x600.png" alt="Matcha Lychee Lemonade" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Mocktail</span><div class="menu-card-name">Matcha Lychee Lemonade</div><p class="menu-card-desc">Earthy matcha meets bright lychee lemonade.</p></div></div>
+        <div class="menu-card"><div class="menu-card-img-wrap"><img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/uploads/2025/03/kiwisparkler-600x600.png" alt="Kiwi Sparkler" loading="lazy"></div><div class="menu-card-body"><span class="menu-card-tag">Mocktail</span><div class="menu-card-name">Kiwi Sparkler</div><p class="menu-card-desc">A fizzy, fruity kiwi mocktail.</p></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== NUTRITION CTA ===== -->
+  <section class="section-padding bg-dark" style="text-align:center;padding-top:0;">
+    <div class="container">
+      <p style="font-size:14px;color:var(--muted);max-width:520px;margin:0 auto 20px;">Menu items and availability vary by location. For full nutritional and allergen information, visit our nutrition guide.</p>
+      <a href="nutritional-information.html" class="btn btn-outline">View Nutritional Information</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg" alt="JINYA Ramen Bar" class="footer-logo-img">
+          <p class="footer-tagline">Slow-simmered broths, handmade noodles, and authentic Japanese ramen culture. We're crazy about ramen.</p>
+          <div class="social-row" style="margin-top:20px;">
+            <a href="https://facebook.com/JinyaRamenBar" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://instagram.com/jinyaramenbar" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://tiktok.com/@jinyaramenbar" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Explore</div>
+          <div class="footer-links">
+            <a href="menu.html">Menu</a>
+            <a href="locations.html">Locations</a>
+            <a href="about.html">About Us</a>
+            <a href="rewards.html">Rewards</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Company</div>
+          <div class="footer-links">
+            <a href="franchise.html">Franchise</a>
+            <a href="careers.html">Careers</a>
+            <a href="press.html">Press</a>
+            <a href="brands.html">Our Brands</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Corporate Office</div>
+          <div class="footer-links">
+            <span style="font-size:14px;color:rgba(var(--text-rgb),0.65);line-height:1.7;display:block;">21045 Erwin Street, Suite 1A<br>Woodland Hills, CA 91367</span>
+            <a href="tel:3239302477">(323) 930-2477</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; JINYA Holdings, Inc. All Rights Reserved.</span>
+        <div class="footer-legal">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="nutritional-information.html">Nutrition</a>
+          <a href="sitemap.html">Sitemap</a>
+          <a href="accessibility-statement.html">Accessibility Statement</a>
+          <a href="your-privacy-choices.html">Your Privacy Choices</a>
+          <a href="opt-out-preferences.html">Opt-Out Preferences</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

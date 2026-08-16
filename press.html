@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press — JINYA Ramen Bar</title>
+  <meta name="description" content="News and press coverage of JINYA Ramen Bar.">
+  <link rel="preconnect" href="https://use.typekit.net">
+  <link rel="stylesheet" href="https://use.typekit.net/aog7svi.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero {
+      padding: calc(var(--nav-h) + 56px) 0 48px;
+      background: var(--bg-dark);
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(204,0,0,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero-inner { position: relative; max-width: 560px; margin: 0 auto; }
+    .page-hero h1 { font-size: clamp(34px, 6vw, 60px); font-weight: 700; text-transform: uppercase; margin: 8px 0 12px; }
+    .page-hero p { font-size: 15px; color: var(--muted); }
+
+    .press-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .press-row { background: var(--surface); padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; transition: background var(--transition); }
+    .press-row:hover { background: var(--surface-2); }
+    .press-headline { font-size: 15px; color: var(--text); line-height: 1.5; }
+    .press-row-date { font-size: 12px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+    @media (max-width: 700px) { .press-row { flex-direction: column; align-items: flex-start; gap: 6px; } }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav" class="nav scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg" alt="JINYA Ramen Bar" class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="locations.html" class="nav-link">Locations</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="franchise.html" class="nav-link">Franchise</a></li>
+        <li><a href="rewards.html" class="nav-link">Rewards</a></li>
+        <li><a href="careers.html" class="nav-link">Careers</a></li>
+        <li><a href="press.html" class="nav-link active">Press</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm nav-cta">Order Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <ul>
+        <li><a href="menu.html" class="mobile-link">Menu</a></li>
+        <li><a href="locations.html" class="mobile-link">Locations</a></li>
+        <li><a href="about.html" class="mobile-link">About Us</a></li>
+        <li><a href="franchise.html" class="mobile-link">Franchise</a></li>
+        <li><a href="rewards.html" class="mobile-link">Rewards</a></li>
+        <li><a href="careers.html" class="mobile-link">Careers</a></li>
+        <li><a href="press.html" class="mobile-link">Press</a></li>
+        <li><a href="contact.html" class="mobile-link">Contact</a></li>
+      </ul>
+      <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-full mobile-cta">Order Now</a>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <span class="eyebrow reveal-up">News &amp; Press</span>
+      <h1 class="reveal-up">Recognized <span class="text-red">Nationwide</span></h1>
+      <p class="reveal-up">A look at recent press coverage and media mentions of JINYA Ramen Bar.</p>
+    </div>
+  </section>
+
+  <!-- ===== PRESS QUOTES ===== -->
+  <section class="section-padding" style="padding-bottom:0;">
+    <div class="container">
+      <div class="press-grid">
+        <div class="press-card reveal-up">
+          <div class="quote-mark" style="font-family:var(--font-display);font-size:40px;color:var(--red);line-height:1;">&ldquo;</div>
+          <p class="press-quote">Selected JINYA Ramen Bar as one of the Five Best Ramen Spots in America.</p>
+          <div class="press-date">Travelers Today &middot; 2017</div>
+        </div>
+        <div class="press-card reveal-up">
+          <div class="quote-mark" style="font-family:var(--font-display);font-size:40px;color:var(--red);line-height:1;">&ldquo;</div>
+          <p class="press-quote">Selected JINYA as one of the 10 Best Vegan Ramen Finds in Los Angeles.</p>
+          <div class="press-date">LA Weekly &middot; 2016</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECENT HEADLINES ===== -->
+  <section class="section-padding">
+    <div class="container" style="max-width:840px;">
+      <div class="section-header reveal-up">
+        <span class="eyebrow">Recent Coverage</span>
+        <h2 class="section-title">In The <span class="text-red">News</span></h2>
+      </div>
+      <div class="press-list reveal-up">
+        <div class="press-row"><span class="press-headline">JINYA Ramen Bar &ndash; Technomic's Top 500</span><span class="press-row-date">June 17, 2026</span></div>
+        <div class="press-row"><span class="press-headline">Restaurant Deals Specials and Summer Menus</span><span class="press-row-date">June 9, 2026</span></div>
+        <div class="press-row"><span class="press-headline">JINYA Teams Up with "Dragon Ball Z" for Summer Ramen and Collectible Pin Drop</span><span class="press-row-date">June 5, 2026</span></div>
+        <div class="press-row"><span class="press-headline">Dragon Ball Z and JINYA Ramen Bar Collaboration Announced</span><span class="press-row-date">June 1, 2026</span></div>
+        <div class="press-row"><span class="press-headline">Vancouver World Cup 2026 Travel Guide for Canada vs Qatar</span><span class="press-row-date">May 25, 2026</span></div>
+        <div class="press-row"><span class="press-headline">JINYA Ramen Bar Opens in Langley This Week (and We Tried It)</span><span class="press-row-date">May 20, 2026</span></div>
+        <div class="press-row"><span class="press-headline">JINYA Has a New Location Opening in Willowbrook Mall</span><span class="press-row-date">May 20, 2026</span></div>
+        <div class="press-row"><span class="press-headline">68 Mother's Day Food Deals to Treat Your Mom This Weekend</span><span class="press-row-date">May 9, 2026</span></div>
+        <div class="press-row"><span class="press-headline">JINYA West Hollywood Introduces Dry-Aged Rib-Eye and Wood-Fired Everything</span><span class="press-row-date">April 24, 2026</span></div>
+        <div class="press-row"><span class="press-headline">JINYA Opens Flagship West Hollywood Location</span><span class="press-row-date">April 20, 2026</span></div>
+        <div class="press-row"><span class="press-headline">Tax Day Deals Are Here. Restaurants Offer Free Food and Discounts</span><span class="press-row-date">April 15, 2026</span></div>
+        <div class="press-row"><span class="press-headline">The Best L.A. Restaurants Debuting in April</span><span class="press-row-date">April 15, 2026</span></div>
+        <div class="press-row"><span class="press-headline">JINYA Holdings to Open Flagship in West Hollywood</span><span class="press-row-date">April 6, 2026</span></div>
+        <div class="press-row"><span class="press-headline">Tax-Free Ramen at JINYA Ramen Bar on Select Tuesdays in April</span><span class="press-row-date">April 2, 2026</span></div>
+        <div class="press-row"><span class="press-headline">New Chef's Special at JINYA</span><span class="press-row-date">March 7, 2026</span></div>
+        <div class="press-row"><span class="press-headline">JINYA Ramen Bar Takes Its Signature Nikuman to the Skies with Japan Airlines</span><span class="press-row-date">March 2, 2026</span></div>
+        <div class="press-row"><span class="press-headline">From Steak and Lobster to Heart-Shaped Waffles, Find Valentine's Day Deals</span><span class="press-row-date">February 13, 2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRESS INQUIRIES CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="eyebrow reveal-up">Media Inquiries</span>
+        <h2 class="cta-title reveal-up">Let's <span class="text-red">Talk</span></h2>
+        <p class="cta-sub reveal-up">For press and media inquiries, reach out to our corporate team.</p>
+        <div class="cta-actions reveal-up">
+          <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg" alt="JINYA Ramen Bar" class="footer-logo-img">
+          <p class="footer-tagline">Slow-simmered broths, handmade noodles, and authentic Japanese ramen culture. We're crazy about ramen.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Explore</div>
+          <div class="footer-links">
+            <a href="menu.html">Menu</a>
+            <a href="locations.html">Locations</a>
+            <a href="about.html">About Us</a>
+            <a href="rewards.html">Rewards</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Company</div>
+          <div class="footer-links">
+            <a href="franchise.html">Franchise</a>
+            <a href="careers.html">Careers</a>
+            <a href="press.html">Press</a>
+            <a href="brands.html">Our Brands</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Corporate Office</div>
+          <div class="footer-links">
+            <span style="font-size:14px;color:rgba(var(--text-rgb),0.65);line-height:1.7;display:block;">21045 Erwin Street, Suite 1A<br>Woodland Hills, CA 91367</span>
+            <a href="tel:3239302477">(323) 930-2477</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; JINYA Holdings, Inc. All Rights Reserved.</span>
+        <div class="footer-legal">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="nutritional-information.html">Nutrition</a>
+          <a href="sitemap.html">Sitemap</a>
+          <a href="accessibility-statement.html">Accessibility Statement</a>
+          <a href="your-privacy-choices.html">Your Privacy Choices</a>
+          <a href="opt-out-preferences.html">Opt-Out Preferences</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

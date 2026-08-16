@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JINYA Rewards — JINYA Ramen Bar</title>
+  <meta name="description" content="Join JINYA Rewards and earn points toward free ramen every time you order.">
+  <link rel="preconnect" href="https://use.typekit.net">
+  <link rel="stylesheet" href="https://use.typekit.net/aog7svi.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .rewards-hero {
+      padding: calc(var(--nav-h) + 64px) 0 80px;
+      background: var(--bg-dark);
+      position: relative; overflow: hidden;
+      text-align: center;
+    }
+    .rewards-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(204,0,0,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .rewards-hero-inner { position: relative; max-width: 620px; margin: 0 auto; }
+    .rewards-hero h1 { font-size: clamp(36px, 6.5vw, 66px); font-weight: 700; text-transform: uppercase; margin: 8px 0 16px; line-height: 1.05; }
+    .rewards-hero p { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 30px; }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .benefit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .benefit-card:hover { border-color: rgba(204,0,0,0.4); transform: translateY(-4px); }
+    .benefit-icon {
+      width: 46px; height: 46px;
+      border-radius: var(--radius);
+      background: rgba(204,0,0,0.12);
+      color: var(--red);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .benefit-name { font-family: var(--font-display); font-size: 17px; font-weight: 700; text-transform: uppercase; }
+    .benefit-desc { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .faq-item { background: var(--surface); }
+    .faq-q {
+      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+      padding: 22px 26px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      font-family: var(--font-text); font-size: 15px; font-weight: 600; color: var(--text);
+    }
+    .faq-q:hover { color: var(--red); }
+    .faq-q .faq-plus { flex-shrink: 0; font-size: 20px; color: var(--red); transition: transform var(--transition); line-height: 1; }
+    .faq-item.open .faq-q .faq-plus { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height var(--transition), padding var(--transition); padding: 0 26px; }
+    .faq-item.open .faq-a { max-height: 400px; padding: 0 26px 22px; }
+    .faq-a p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav" class="nav scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg" alt="JINYA Ramen Bar" class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="locations.html" class="nav-link">Locations</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="franchise.html" class="nav-link">Franchise</a></li>
+        <li><a href="rewards.html" class="nav-link active">Rewards</a></li>
+        <li><a href="careers.html" class="nav-link">Careers</a></li>
+        <li><a href="press.html" class="nav-link">Press</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm nav-cta">Order Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <ul>
+        <li><a href="menu.html" class="mobile-link">Menu</a></li>
+        <li><a href="locations.html" class="mobile-link">Locations</a></li>
+        <li><a href="about.html" class="mobile-link">About Us</a></li>
+        <li><a href="franchise.html" class="mobile-link">Franchise</a></li>
+        <li><a href="rewards.html" class="mobile-link">Rewards</a></li>
+        <li><a href="careers.html" class="mobile-link">Careers</a></li>
+        <li><a href="press.html" class="mobile-link">Press</a></li>
+        <li><a href="contact.html" class="mobile-link">Contact</a></li>
+      </ul>
+      <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-full mobile-cta">Order Now</a>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="rewards-hero">
+    <div class="container rewards-hero-inner">
+      <span class="eyebrow reveal-up">JINYA Rewards</span>
+      <h1 class="reveal-up">Introducing <span class="text-red">JINYA Rewards</span></h1>
+      <p class="reveal-up">Earn points every time you order and turn them into free ramen, small plates, and exclusive perks. It's our way of saying thank you for being crazy about ramen.</p>
+      <div class="cta-actions reveal-up" style="justify-content:center;">
+        <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Join Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFITS ===== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="eyebrow">Member Benefits</span>
+        <h2 class="section-title">Why <span class="text-red">Join</span></h2>
+      </div>
+      <div class="benefit-grid">
+        <div class="benefit-card reveal-up">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></div>
+          <div class="benefit-name">Welcome Reward</div>
+          <div class="benefit-desc">Sign up and receive a welcome reward to use on your next visit.</div>
+        </div>
+        <div class="benefit-card reveal-up">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="benefit-name">Earn Points Fast</div>
+          <div class="benefit-desc">Earn points on every qualifying purchase, in-restaurant or online.</div>
+        </div>
+        <div class="benefit-card reveal-up">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/><path d="M12 8v4l3 2"/></svg></div>
+          <div class="benefit-name">Birthday Reward</div>
+          <div class="benefit-desc">Celebrate your birthday with a special reward, on us.</div>
+        </div>
+        <div class="benefit-card reveal-up">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
+          <div class="benefit-name">Exclusive Offers</div>
+          <div class="benefit-desc">Get first access to limited-time menu items and member-only deals.</div>
+        </div>
+        <div class="benefit-card reveal-up">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21c-4-3-8-6.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4.5-4 8-8 11Z"/></svg></div>
+          <div class="benefit-name">Free Ramen</div>
+          <div class="benefit-desc">Redeem points for free ramen and other menu favorites.</div>
+        </div>
+        <div class="benefit-card reveal-up">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+          <div class="benefit-name">Track Everything</div>
+          <div class="benefit-desc">Track your points, order history, and rewards from the app.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section-padding" style="padding-top:0;">
+    <div class="container" style="max-width:780px;">
+      <div class="section-header reveal-up">
+        <span class="eyebrow">Questions</span>
+        <h2 class="section-title">Rewards <span class="text-red">FAQ</span></h2>
+      </div>
+      <div class="faq-list reveal-up" id="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button">How do I join JINYA Rewards?<span class="faq-plus">+</span></button>
+          <div class="faq-a"><p>Sign up for free through the JINYA app or at orderjinya.com. All you need is your name, email, and phone number to get started.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">How do I earn points?<span class="faq-plus">+</span></button>
+          <div class="faq-a"><p>You earn points automatically on qualifying purchases made in-restaurant or through online ordering when you're signed in to your account.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">How do I redeem my rewards?<span class="faq-plus">+</span></button>
+          <div class="faq-a"><p>Once you have enough points for a reward, it will appear in your account and can be applied to a qualifying order in the app or in-restaurant.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Do my points expire?<span class="faq-plus">+</span></button>
+          <div class="faq-a"><p>Points and account activity are subject to the terms outlined in the JINYA Rewards program terms and conditions, available in the app.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Can I use JINYA Rewards at every location?<span class="faq-plus">+</span></button>
+          <div class="faq-a"><p>JINYA Rewards is accepted at participating locations. Check the app or ask your local restaurant to confirm participation.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="eyebrow reveal-up">Ready to Start Earning?</span>
+        <h2 class="cta-title reveal-up">Join <span class="text-red">JINYA Rewards</span></h2>
+        <p class="cta-sub reveal-up">It's free to join and takes less than a minute.</p>
+        <div class="cta-actions reveal-up">
+          <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Sign Up Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg" alt="JINYA Ramen Bar" class="footer-logo-img">
+          <p class="footer-tagline">Slow-simmered broths, handmade noodles, and authentic Japanese ramen culture. We're crazy about ramen.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Explore</div>
+          <div class="footer-links">
+            <a href="menu.html">Menu</a>
+            <a href="locations.html">Locations</a>
+            <a href="about.html">About Us</a>
+            <a href="rewards.html">Rewards</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Company</div>
+          <div class="footer-links">
+            <a href="franchise.html">Franchise</a>
+            <a href="careers.html">Careers</a>
+            <a href="press.html">Press</a>
+            <a href="brands.html">Our Brands</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Corporate Office</div>
+          <div class="footer-links">
+            <span style="font-size:14px;color:rgba(var(--text-rgb),0.65);line-height:1.7;display:block;">21045 Erwin Street, Suite 1A<br>Woodland Hills, CA 91367</span>
+            <a href="tel:3239302477">(323) 930-2477</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; JINYA Holdings, Inc. All Rights Reserved.</span>
+        <div class="footer-legal">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="nutritional-information.html">Nutrition</a>
+          <a href="sitemap.html">Sitemap</a>
+          <a href="accessibility-statement.html">Accessibility Statement</a>
+          <a href="your-privacy-choices.html">Your Privacy Choices</a>
+          <a href="opt-out-preferences.html">Opt-Out Preferences</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq-item');
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function (el) { el.classList.remove('open'); });
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

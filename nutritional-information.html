@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutritional Information — JINYA Ramen Bar</title>
+  <meta name="description" content="Nutritional and allergen information for the JINYA Ramen Bar menu.">
+  <link rel="preconnect" href="https://use.typekit.net">
+  <link rel="stylesheet" href="https://use.typekit.net/aog7svi.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero {
+      padding: calc(var(--nav-h) + 56px) 0 48px;
+      background: var(--bg-dark);
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero-inner { max-width: 640px; margin: 0 auto; }
+    .page-hero h1 { font-size: clamp(32px, 5.5vw, 54px); font-weight: 700; text-transform: uppercase; margin: 8px 0 12px; }
+    .page-hero p { font-size: 15px; color: var(--muted); line-height: 1.7; }
+
+    .disclaimer-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--red);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+    .disclaimer-box h3 { font-family: var(--font-display); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--red); margin-bottom: 10px; }
+    .disclaimer-box p { font-size: 13.5px; color: var(--muted); line-height: 1.75; }
+    .disclaimer-box p + p { margin-top: 10px; }
+
+    .nutri-accordion { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .nutri-cat { background: var(--surface); }
+    .nutri-cat-q {
+      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+      padding: 20px 26px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      font-family: var(--font-display); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; color: var(--text);
+    }
+    .nutri-cat-q:hover { color: var(--red); }
+    .nutri-cat-q .count { font-family: var(--font-text); font-size: 12px; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--muted); margin-right: auto; margin-left: 12px; }
+    .nutri-cat-q .plus { flex-shrink: 0; font-size: 20px; color: var(--red); transition: transform var(--transition); line-height: 1; }
+    .nutri-cat.open .nutri-cat-q .plus { transform: rotate(45deg); }
+    .nutri-body { max-height: 0; overflow: hidden; transition: max-height var(--transition); }
+    .nutri-cat.open .nutri-body { max-height: 2000px; }
+    .nutri-table-wrap { overflow-x: auto; padding: 0 26px 22px; }
+    .nutri-table { width: 100%; border-collapse: collapse; min-width: 480px; }
+    .nutri-table th { text-align: left; font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted-2); padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .nutri-table td { font-size: 13.5px; color: var(--text); padding: 12px; border-bottom: 1px solid var(--border); }
+    .nutri-table tr:last-child td { border-bottom: none; }
+    .nutri-table td.item-name { font-weight: 600; }
+    .nutri-table td.item-note { color: var(--muted); text-align: right; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav" class="nav scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg" alt="JINYA Ramen Bar" class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="locations.html" class="nav-link">Locations</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="franchise.html" class="nav-link">Franchise</a></li>
+        <li><a href="rewards.html" class="nav-link">Rewards</a></li>
+        <li><a href="careers.html" class="nav-link">Careers</a></li>
+        <li><a href="press.html" class="nav-link">Press</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm nav-cta">Order Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <ul>
+        <li><a href="menu.html" class="mobile-link">Menu</a></li>
+        <li><a href="locations.html" class="mobile-link">Locations</a></li>
+        <li><a href="about.html" class="mobile-link">About Us</a></li>
+        <li><a href="franchise.html" class="mobile-link">Franchise</a></li>
+        <li><a href="rewards.html" class="mobile-link">Rewards</a></li>
+        <li><a href="careers.html" class="mobile-link">Careers</a></li>
+        <li><a href="press.html" class="mobile-link">Press</a></li>
+        <li><a href="contact.html" class="mobile-link">Contact</a></li>
+      </ul>
+      <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-full mobile-cta">Order Now</a>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <span class="eyebrow reveal-up">Guest Resources</span>
+      <h1 class="reveal-up">Nutritional <span class="text-red">Information</span></h1>
+      <p class="reveal-up">Every bowl is made fresh in-house, which means nutritional values can vary by location and preparation. Browse menu categories below, and see the disclaimer for how to get detailed allergen data.</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container" style="max-width:900px;">
+
+      <div class="disclaimer-box reveal-up">
+        <h3>Nutrition Disclaimer</h3>
+        <p>Nutritional values are estimates based on standard recipes and preparation methods. Actual values may vary due to differences in suppliers, ingredient substitutions, portion sizes, and regional or seasonal menu variations across locations.</p>
+        <h3 style="margin-top:18px;">Allergen Disclaimer</h3>
+        <p>Our kitchens handle wheat, soy, shellfish, fish, egg, dairy, tree nuts, and peanuts. While we take care in food handling, we cannot guarantee that any item is completely free of allergens due to shared kitchen equipment and preparation areas. Guests with food allergies or sensitivities should speak with restaurant staff before ordering, and use their own judgment when deciding what and whether to eat.</p>
+      </div>
+
+      <div class="section-header reveal-up">
+        <span class="eyebrow">Menu Categories</span>
+        <h2 class="section-title">Browse By <span class="text-red">Category</span></h2>
+      </div>
+
+      <div class="nutri-accordion reveal-up" id="nutri-accordion">
+
+        <div class="nutri-cat">
+          <button class="nutri-cat-q" type="button">Ramen<span class="count">14 items</span><span class="plus">+</span></button>
+          <div class="nutri-body"><div class="nutri-table-wrap"><table class="nutri-table">
+            <thead><tr><th>Item</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="item-name">Tan Tan Men</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Birria Ramen</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">V Red Fire Opal</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Spicy Creamy V Ramen</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Flying V Harvest</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">JINYA Chicken Ramen</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Spicy Chicken Ramen</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Wonton Chicken Ramen</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">JINYA Tonkotsu Black</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Premium Tonkotsu Red</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">JINYA Tonkotsu Original 2010</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Chicken Yuzu Shio Delight</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Shrimp Wonton Ramen</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Mountain Buta Garlic</td><td class="item-note">See in-app guide</td></tr>
+            </tbody>
+          </table></div></div>
+        </div>
+
+        <div class="nutri-cat">
+          <button class="nutri-cat-q" type="button">Salads<span class="count">4 items</span><span class="plus">+</span></button>
+          <div class="nutri-body"><div class="nutri-table-wrap"><table class="nutri-table">
+            <thead><tr><th>Item</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="item-name">Crunchy Cucumber Salad</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Chicken Salad</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">House Salad</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Seaweed Salad</td><td class="item-note">See in-app guide</td></tr>
+            </tbody>
+          </table></div></div>
+        </div>
+
+        <div class="nutri-cat">
+          <button class="nutri-cat-q" type="button">Small Plates<span class="count">18 items</span><span class="plus">+</span></button>
+          <div class="nutri-body"><div class="nutri-table-wrap"><table class="nutri-table">
+            <thead><tr><th>Item</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="item-name">French Fries</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Miso Glazed Eggplant</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Hokkaido Scallop</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Salmon Jalape&ntilde;o Sashimi</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Corn Tempura</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Nikuman</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Impossible&trade; Gyoza</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Brussels Sprouts Tempura</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Edamame</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Garlic Shrimp Spring Roll</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Pork Gyoza</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">JINYA Bun</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Impossible&trade; Bun</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Crispy Chicken</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Takoyaki</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Spicy Creamy Shrimp Tempura</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Crispy Rice with Spicy Tuna</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Saut&eacute;ed Broccolini</td><td class="item-note">See in-app guide</td></tr>
+            </tbody>
+          </table></div></div>
+        </div>
+
+        <div class="nutri-cat">
+          <button class="nutri-cat-q" type="button">Mini Tacos<span class="count">3 items</span><span class="plus">+</span></button>
+          <div class="nutri-body"><div class="nutri-table-wrap"><table class="nutri-table">
+            <thead><tr><th>Item</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="item-name">Salmon Poke</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Spicy Tuna</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Impossible&trade;</td><td class="item-note">See in-app guide</td></tr>
+            </tbody>
+          </table></div></div>
+        </div>
+
+        <div class="nutri-cat">
+          <button class="nutri-cat-q" type="button">Sushi<span class="count">2 items</span><span class="plus">+</span></button>
+          <div class="nutri-body"><div class="nutri-table-wrap"><table class="nutri-table">
+            <thead><tr><th>Item</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="item-name">Aburi Oshi-Sushi Salmon (3pc)</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Aburi Oshi-Sushi Salmon (6pc)</td><td class="item-note">See in-app guide</td></tr>
+            </tbody>
+          </table></div></div>
+        </div>
+
+        <div class="nutri-cat">
+          <button class="nutri-cat-q" type="button">Rice Bowls &amp; Curry<span class="count">5 items</span><span class="plus">+</span></button>
+          <div class="nutri-body"><div class="nutri-table-wrap"><table class="nutri-table">
+            <thead><tr><th>Item</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="item-name">Garlic Rice</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Pork Chashu Bowl</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Chicken Chashu Bowl</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Impossible&trade; Rice Bowl</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Tokyo Curry Rice</td><td class="item-note">See in-app guide</td></tr>
+            </tbody>
+          </table></div></div>
+        </div>
+
+        <div class="nutri-cat">
+          <button class="nutri-cat-q" type="button">Dessert<span class="count">2 items</span><span class="plus">+</span></button>
+          <div class="nutri-body"><div class="nutri-table-wrap"><table class="nutri-table">
+            <thead><tr><th>Item</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="item-name">Matcha Tiramisu</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Mochi Ice Cream</td><td class="item-note">See in-app guide</td></tr>
+            </tbody>
+          </table></div></div>
+        </div>
+
+        <div class="nutri-cat">
+          <button class="nutri-cat-q" type="button">Kids' Meal<span class="count">2 items</span><span class="plus">+</span></button>
+          <div class="nutri-body"><div class="nutri-table-wrap"><table class="nutri-table">
+            <thead><tr><th>Item</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="item-name">Kid's Meal</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Vegetarian Kid's Meal</td><td class="item-note">See in-app guide</td></tr>
+            </tbody>
+          </table></div></div>
+        </div>
+
+        <div class="nutri-cat">
+          <button class="nutri-cat-q" type="button">Cocktails &amp; Mocktails<span class="count">10 items</span><span class="plus">+</span></button>
+          <div class="nutri-body"><div class="nutri-table-wrap"><table class="nutri-table">
+            <thead><tr><th>Item</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="item-name">Malibu Sunrise</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">E Tomo E Tomo E Tomorrow</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Flying Violette</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Smokey Wokashi OF</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Lycheetini</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Yuzu Margarita</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">J. Girl</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Watermelon Delight</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Matcha Lychee Lemonade</td><td class="item-note">See in-app guide</td></tr>
+              <tr><td class="item-name">Kiwi Sparkler</td><td class="item-note">See in-app guide</td></tr>
+            </tbody>
+          </table></div></div>
+        </div>
+
+      </div>
+
+      <p class="reveal-up" style="font-size:13px;color:var(--muted-2);margin-top:24px;line-height:1.7;">
+        Detailed calorie, macronutrient, and allergen data for each item is available through the JINYA mobile app and online ordering platform, or by asking a team member at your local restaurant.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg" alt="JINYA Ramen Bar" class="footer-logo-img">
+          <p class="footer-tagline">Slow-simmered broths, handmade noodles, and authentic Japanese ramen culture. We're crazy about ramen.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Explore</div>
+          <div class="footer-links">
+            <a href="menu.html">Menu</a>
+            <a href="locations.html">Locations</a>
+            <a href="about.html">About Us</a>
+            <a href="rewards.html">Rewards</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Company</div>
+          <div class="footer-links">
+            <a href="franchise.html">Franchise</a>
+            <a href="careers.html">Careers</a>
+            <a href="press.html">Press</a>
+            <a href="brands.html">Our Brands</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Corporate Office</div>
+          <div class="footer-links">
+            <span style="font-size:14px;color:rgba(var(--text-rgb),0.65);line-height:1.7;display:block;">21045 Erwin Street, Suite 1A<br>Woodland Hills, CA 91367</span>
+            <a href="tel:3239302477">(323) 930-2477</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; JINYA Holdings, Inc. All Rights Reserved.</span>
+        <div class="footer-legal">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="nutritional-information.html">Nutrition</a>
+          <a href="sitemap.html">Sitemap</a>
+          <a href="accessibility-statement.html">Accessibility Statement</a>
+          <a href="your-privacy-choices.html">Your Privacy Choices</a>
+          <a href="opt-out-preferences.html">Opt-Out Preferences</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.nutri-cat-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btn.closest('.nutri-cat').classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
