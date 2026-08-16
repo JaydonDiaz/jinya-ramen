@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>try{if(localStorage.getItem('jinya-theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}</script>
   <link rel="icon" type="image/svg+xml" href="https://jinyaramenbar.b-cdn.net/cms/wp-content/themes/jinyaramenbar/images/jinya_logo.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Privacy Choices — JINYA Ramen Bar</title>
@@ -29,6 +30,10 @@
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
       <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm nav-cta">Order Now</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">
+        <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+      </button>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -49,6 +54,12 @@
         <li><a href="contact.html" class="mobile-link">Contact</a></li>
       </ul>
       <a href="https://orderjinya.com/" target="_blank" rel="noopener" class="btn btn-primary btn-full mobile-cta">Order Now</a>
+      <button class="theme-toggle theme-toggle-mobile" id="theme-toggle-mobile" type="button" aria-label="Switch to light mode">
+        <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <span class="theme-label-dark">Light Mode</span>
+        <span class="theme-label-light">Dark Mode</span>
+      </button>
     </div>
   </div>
 
@@ -116,7 +127,7 @@
         <div>
           <div class="footer-heading">Corporate Office</div>
           <div class="footer-links">
-            <span style="font-size:14px;color:rgba(var(--text-rgb),0.65);line-height:1.7;display:block;">21045 Erwin Street, Suite 1A<br>Woodland Hills, CA 91367</span>
+            <span style="font-size:14px;color:rgba(245,245,245,0.65);line-height:1.7;display:block;">21045 Erwin Street, Suite 1A<br>Woodland Hills, CA 91367</span>
             <a href="tel:3239302477">(323) 930-2477</a>
           </div>
         </div>

@@ -858,3 +858,34 @@ const ITEM_AVAILABILITY = {
     if (e.target === overlay) closeLocModal();
   });
 })();
+
+(function () {
+  var root = document.documentElement;
+  var STORAGE_KEY = 'jinya-theme';
+
+  function currentTheme() {
+    return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      root.setAttribute('data-theme', 'light');
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+      btn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+    });
+  }
+
+  document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var next = currentTheme() === 'light' ? 'dark' : 'light';
+      try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
+      applyTheme(next);
+      document.dispatchEvent(new CustomEvent('themechange', { detail: { theme: next } }));
+    });
+  });
+
+  applyTheme(currentTheme());
+})();

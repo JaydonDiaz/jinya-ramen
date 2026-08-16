@@ -101,7 +101,7 @@ PAGE_TEMPLATE = '''<!DOCTYPE html>
     <div class="container location-hero-inner">
       <span class="eyebrow reveal-up">{status_label}</span>
       <h1 class="reveal-up" style="font-size:clamp(32px, 5vw, 52px);font-weight:700;text-transform:uppercase;margin:8px 0 14px;">JINYA Ramen Bar <span class="text-red">{name}</span></h1>
-      <p class="reveal-up" style="font-size:16px;color:var(--muted);max-width:560px;">{hero_desc}</p>
+      <p class="reveal-up" style="font-size:16px;color:#8c8c8c;max-width:560px;">{hero_desc}</p>
 
       <div class="location-detail-grid">
         <div class="location-info-block reveal-left">
@@ -175,7 +175,7 @@ PAGE_TEMPLATE = '''<!DOCTYPE html>
         <div>
           <div class="footer-heading">Corporate Office</div>
           <div class="footer-links">
-            <span style="font-size:14px;color:rgba(var(--text-rgb),0.65);line-height:1.7;display:block;">21045 Erwin Street, Suite 1A<br>Woodland Hills, CA 91367</span>
+            <span style="font-size:14px;color:rgba(245,245,245,0.65);line-height:1.7;display:block;">21045 Erwin Street, Suite 1A<br>Woodland Hills, CA 91367</span>
             <a href="tel:3239302477">(323) 930-2477</a>
           </div>
         </div>

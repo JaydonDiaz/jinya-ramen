@@ -26,6 +26,27 @@
   --font-text: "neue-haas-grotesk-text", "Helvetica Neue", Arial, sans-serif;
 }
 
+/* ---- Light theme ----
+   Note: --bg-dark, --red, --red-dark stay fixed across both themes on purpose —
+   the nav, hero sections, footer, and CTA bands are always-dark brand chrome
+   (their text colors are hardcoded to light values for the same reason, see
+   .nav-link, .mobile-link, .footer-*, .cta-sub, .legal-hero p below). Only the
+   readable "page canvas" tokens swap. */
+html[data-theme="light"] {
+  --bg:        #faf9f7;
+  --bg-rgb:    250,249,247;
+  --surface:   #ffffff;
+  --surface-2: #f1efeb;
+  --border:    rgba(0,0,0,0.09);
+  --border-hover: rgba(0,0,0,0.2);
+  --red-glow:  rgba(204,0,0,0.16);
+  --text:      #17130f;
+  --text-rgb:  23,19,15;
+  --muted:     #5c5650;
+  --muted-2:   #7a7269;
+}
+html { transition: background var(--transition); }
+
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -157,7 +178,7 @@ p:last-child { margin-bottom: 0; }
 .nav.scrolled {
   background: rgba(10,10,10,0.94);
   backdrop-filter: blur(20px);
-  border-color: var(--border);
+  border-color: rgba(255,255,255,0.08);
 }
 .nav-inner {
   display: flex;
@@ -176,7 +197,7 @@ p:last-child { margin-bottom: 0; }
 .nav-link {
   font-size: 12px;
   font-weight: 600;
-  color: rgba(var(--text-rgb),0.75);
+  color: rgba(245,245,245,0.75);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   transition: color var(--transition);
@@ -197,6 +218,43 @@ p:last-child { margin-bottom: 0; }
 .nav-link:hover, .nav-link.active { color: #fff; }
 .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
 .nav-cta { margin-left: 8px; flex-shrink: 0; }
+
+/* ---- Theme toggle ---- */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  margin-left: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.16);
+  color: #f5f5f5;
+  transition: all var(--transition);
+}
+.theme-toggle:hover { border-color: var(--red); color: var(--red); }
+.theme-toggle .icon-moon { display: block; }
+.theme-toggle .icon-sun { display: none; }
+html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+.theme-label-dark, .theme-label-light { display: none; }
+.theme-toggle-mobile {
+  width: 100%;
+  height: auto;
+  border-radius: 999px;
+  padding: 14px 20px;
+  gap: 10px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.theme-toggle-mobile .theme-label-dark { display: inline; }
+html[data-theme="light"] .theme-toggle-mobile .theme-label-dark { display: none; }
+html[data-theme="light"] .theme-toggle-mobile .theme-label-light { display: inline; }
 .hamburger {
   display: none;
   flex-direction: column;
@@ -246,12 +304,13 @@ p:last-child { margin-bottom: 0; }
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
-  color: rgba(var(--text-rgb),0.85);
-  border-bottom: 1px solid var(--border);
+  color: rgba(245,245,245,0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   transition: color var(--transition), padding-left var(--transition);
 }
 .mobile-link:hover { color: var(--red); padding-left: 8px; }
 .mobile-cta { margin-top: 8px; }
+.theme-toggle-mobile { margin-top: 14px; justify-content: center; }
 
 /* ============================================================
    HERO
@@ -446,7 +505,7 @@ p:last-child { margin-bottom: 0; }
   align-items: flex-start;
   gap: 14px;
   font-size: 14px;
-  color: rgba(var(--text-rgb),0.8);
+  color: rgba(245,245,245,0.8);
   line-height: 1.6;
 }
 .split-list-item svg { color: var(--red); flex-shrink: 0; margin-top: 2px; }
@@ -708,7 +767,7 @@ button.menu-card-badge:hover, button.menu-card-badge:focus-visible { background:
   position: relative;
   padding: calc(var(--nav-h) + 64px) 0 64px;
   background: var(--bg-dark);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   overflow: hidden;
 }
 .location-hero::before {
@@ -891,7 +950,7 @@ button.menu-card-badge:hover, button.menu-card-badge:focus-visible { background:
   border-bottom: 1px solid var(--border);
 }
 .legal-hero h1 { font-size: clamp(30px, 5vw, 48px); font-weight: 700; text-transform: uppercase; margin: 8px 0 10px; }
-.legal-hero p { font-size: 13px; color: var(--muted-2); }
+.legal-hero p { font-size: 13px; color: #8c8c8c; }
 .legal-body { max-width: 760px; margin: 0 auto; }
 .legal-body h2 { font-family: var(--font-display); font-size: 19px; font-weight: 700; text-transform: uppercase; margin: 40px 0 14px; }
 .legal-body h2:first-child { margin-top: 0; }
@@ -932,25 +991,39 @@ button.menu-card-badge:hover, button.menu-card-badge:focus-visible { background:
 }
 .cta-inner { position: relative; }
 .cta-title { font-size: clamp(40px, 7vw, 80px); font-weight: 700; text-transform: uppercase; line-height: 1; margin-bottom: 22px; }
-.cta-sub { font-size: 16px; color: var(--muted); margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.cta-sub { font-size: 16px; color: #8c8c8c; margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.hero .btn-outline, .about-hero .btn-outline, .cta-section .btn-outline, .bg-dark .btn-outline {
+  color: #f5f5f5;
+  border-color: rgba(255,255,255,0.35);
+}
+
+/* Generic ".bg-dark" utility band is always-dark regardless of theme (like the hero/cta/footer
+   above). :where() keeps these at zero extra specificity so any more-specific card inside a
+   bg-dark band (.value-card, .press-quote-card, etc, which have their own swappable surface
+   background) still wins and swaps normally — only bare text sitting directly on the dark
+   band gets pinned here. */
+:where(.bg-dark) h1, :where(.bg-dark) h2, :where(.bg-dark) h3, :where(.bg-dark) h4 { color: #f5f5f5; }
+:where(.bg-dark) .lead { color: #f5f5f5; }
+:where(.bg-dark) p { color: #8c8c8c; }
+:where(.bg-dark) .section-sub { color: #8c8c8c; }
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* ============================================================
    FOOTER
    ============================================================ */
-.footer { background: var(--bg-dark); border-top: 1px solid var(--border); padding: 64px 0 32px; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 40px; margin-bottom: 32px; border-bottom: 1px solid var(--border); }
+.footer { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.08); padding: 64px 0 32px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 40px; margin-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .footer-logo-img { height: 32px; width: auto; margin-bottom: 16px; }
-.footer-tagline { font-size: 13px; color: var(--muted); line-height: 1.7; max-width: 280px; }
-.footer-heading { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+.footer-tagline { font-size: 13px; color: #8c8c8c; line-height: 1.7; max-width: 280px; }
+.footer-heading { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8c8c8c; margin-bottom: 18px; }
 .footer-links { display: flex; flex-direction: column; gap: 11px; }
-.footer-links a { font-size: 14px; color: rgba(var(--text-rgb),0.65); transition: color var(--transition); }
+.footer-links a { font-size: 14px; color: rgba(245,245,245,0.65); transition: color var(--transition); }
 .footer-links a:hover { color: var(--red); }
 .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-.footer-copy { font-size: 12px; color: var(--muted-2); }
+.footer-copy { font-size: 12px; color: #555555; }
 .footer-legal { display: flex; gap: 20px; flex-wrap: wrap; }
-.footer-legal a { font-size: 12px; color: var(--muted-2); transition: color var(--transition); }
-.footer-legal a:hover { color: var(--muted); }
+.footer-legal a { font-size: 12px; color: #555555; transition: color var(--transition); }
+.footer-legal a:hover { color: #8c8c8c; }
 .footer-socials { display: flex; gap: 10px; }
 
 /* ============================================================
