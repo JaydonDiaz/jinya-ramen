@@ -191,7 +191,8 @@ p:last-child { margin-bottom: 0; }
   gap: 32px;
 }
 .nav-logo { display: flex; align-items: center; flex-shrink: 0; }
-.logo-img { height: 34px; width: auto; }
+.logo-img { height: 34px; width: auto; transition: filter var(--transition); }
+html[data-theme="light"] .logo-img { filter: brightness(0); }
 .nav-links {
   display: flex;
   gap: 26px;
