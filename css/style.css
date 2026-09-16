@@ -87,7 +87,7 @@ p { color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
 p:last-child { margin-bottom: 0; }
 
 /* ---- Layout ---- */
-.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.container { max-width: 1440px; margin: 0 auto; padding: 0 32px; }
 .section-padding { padding: 100px 0; }
 .bg-dark { background: var(--bg-dark); }
 .text-red { color: var(--red); }
