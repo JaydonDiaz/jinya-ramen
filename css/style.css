@@ -27,16 +27,19 @@
 }
 
 /* ---- Light theme ----
-   Note: --bg-dark, --red, --red-dark stay fixed across both themes on purpose —
-   the hero sections, footer, and CTA bands are always-dark brand chrome (their
-   text colors are hardcoded to light values for the same reason, see
-   .mobile-link, .footer-*, .cta-sub, .legal-hero p below). The nav bar DOES
-   swap once scrolled (see .nav.scrolled overrides) so the toggle is visible;
-   unscrolled it stays white-on-transparent since it's sitting over the
-   always-dark hero. Only the readable "page canvas" tokens swap otherwise. */
+   Note: --red, --red-dark stay fixed across both themes on purpose — the hero
+   sections, footer, and CTA bands are always-dark brand chrome (their text
+   colors are hardcoded to light values for the same reason, see .mobile-link,
+   .footer-*, .cta-sub, .legal-hero p below). --bg-dark itself DOES lighten a
+   step in light mode (pure #000 reads too harsh against the warm light
+   canvas) while staying dark enough that the hardcoded light text on top
+   stays fully readable. The nav bar DOES swap once scrolled (see
+   .nav.scrolled overrides) so the toggle is visible; unscrolled it stays
+   white-on-transparent since it's sitting over the always-dark hero. */
 html[data-theme="light"] {
   --bg:        #faf9f7;
   --bg-rgb:    250,249,247;
+  --bg-dark:   #2a2521;
   --surface:   #ffffff;
   --surface-2: #f1efeb;
   --border:    rgba(0,0,0,0.09);
@@ -979,11 +982,12 @@ button.menu-card-badge:hover, button.menu-card-badge:focus-visible { background:
   border-color: rgba(255,255,255,0.35);
 }
 
-/* Generic ".bg-dark" utility band is always-dark regardless of theme (like the hero/cta/footer
-   above). :where() keeps these at zero extra specificity so any more-specific card inside a
-   bg-dark band (.value-card, .press-quote-card, etc, which have their own swappable surface
-   background) still wins and swaps normally — only bare text sitting directly on the dark
-   band gets pinned here. */
+/* Generic ".bg-dark" utility band stays dark-with-light-text in both themes (like the
+   hero/cta/footer above), even though the band's own background shade lightens a step
+   in light mode via --bg-dark. :where() keeps these at zero extra specificity so any
+   more-specific card inside a bg-dark band (.value-card, .press-quote-card, etc, which
+   have their own swappable surface background) still wins and swaps normally — only
+   bare text sitting directly on the dark band gets pinned here. */
 :where(.bg-dark) h1, :where(.bg-dark) h2, :where(.bg-dark) h3, :where(.bg-dark) h4 { color: #f5f5f5; }
 :where(.bg-dark) .lead { color: #f5f5f5; }
 :where(.bg-dark) p { color: #8c8c8c; }
