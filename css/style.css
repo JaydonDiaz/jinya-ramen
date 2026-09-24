@@ -7,6 +7,7 @@
   --bg:        #0a0a0a;
   --bg-rgb:    10,10,10;
   --bg-dark:   #000000;
+  --bg-dark-rgb: 0,0,0;
   --surface:   #141414;
   --surface-2: #1c1c1c;
   --border:    rgba(255,255,255,0.08);
@@ -32,14 +33,17 @@
    colors are hardcoded to light values for the same reason, see .mobile-link,
    .footer-*, .cta-sub, .legal-hero p below). --bg-dark itself DOES lighten a
    step in light mode (pure #000 reads too harsh against the warm light
-   canvas) while staying dark enough that the hardcoded light text on top
-   stays fully readable. The nav bar DOES swap once scrolled (see
-   .nav.scrolled overrides) so the toggle is visible; unscrolled it stays
-   white-on-transparent since it's sitting over the always-dark hero. */
+   canvas, and left those bands pixel-identical to dark mode) while staying
+   dark enough that the hardcoded light text on top stays fully readable.
+   --bg-dark-rgb drives the .hero-overlay photo scrim the same way. The nav
+   bar DOES swap once scrolled (see .nav.scrolled overrides) so the toggle
+   is visible; unscrolled it stays white-on-transparent since it's sitting
+   over the always-dark hero. */
 html[data-theme="light"] {
   --bg:        #faf9f7;
   --bg-rgb:    250,249,247;
   --bg-dark:   #2a2521;
+  --bg-dark-rgb: 42,37,33;
   --surface:   #ffffff;
   --surface-2: #f1efeb;
   --border:    rgba(0,0,0,0.09);
@@ -344,7 +348,7 @@ html[data-theme="light"] .theme-toggle-mobile .theme-label-light { display: inli
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.8) 100%);
+  background: linear-gradient(135deg, rgba(var(--bg-dark-rgb),0.85) 0%, rgba(var(--bg-dark-rgb),0.45) 55%, rgba(var(--bg-dark-rgb),0.8) 100%);
 }
 .hero-content {
   position: relative;
