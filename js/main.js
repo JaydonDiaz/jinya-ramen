@@ -730,8 +730,15 @@ const ITEM_AVAILABILITY = {
     btn.addEventListener('click', function () {
       var next = currentTheme() === 'light' ? 'dark' : 'light';
       try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
-      applyTheme(next);
-      document.dispatchEvent(new CustomEvent('themechange', { detail: { theme: next } }));
+      function apply() {
+        applyTheme(next);
+        document.dispatchEvent(new CustomEvent('themechange', { detail: { theme: next } }));
+      }
+      if (!prefersReducedMotion && document.startViewTransition) {
+        document.startViewTransition(apply);
+      } else {
+        apply();
+      }
     });
   });
 
